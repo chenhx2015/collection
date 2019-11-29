@@ -13,6 +13,7 @@ function Student(name, age, grade) {
   this.grade = grade;
 }
 Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
 Student.prototype.myGrade = function() {
   console.log("student prototype grade", this.grade);
 };

@@ -9,7 +9,7 @@
 function bubbleSort(arr) {
   var max = arr.length - 1;
   for (var j = 0; j < max; j++) {
-    // 如果某次循环完后，没有任何两数进行交换，就将标志位 设置为 true，表示排序完成
+    // 如果某次循环完后，没有任何两数进行交换，就将标志位 done 设置为 true，表示排序完成
     // 这样我们就可以减少不必要的排序，提高性能
     var done = true;
     for (var i = 0; i < max - j; i++) {
