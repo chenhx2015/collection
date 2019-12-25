@@ -33,3 +33,20 @@ arr4.sort(function(a, b) {
 });
 // 不改变原数组的三个方法：concat, slice, join
 console.log("arr4 order", arr4);
+
+let oarr = [
+  [1, 4],
+  [9, 5]
+];
+// join() 方法用于把数组中的所有元素放入一个字符串。返回的是个字符串
+console.log(Math.max.apply(null, oarr.join(",").split(",")));
+console.log(oarr.join(",").split(",")); // [ '1', '4', '9', '5' ] 二位数组变为了一维数组
+
+let parr = [
+  [1, [2, 4]],
+  [1, 7],
+  [9, [9, 3, [23]]]
+];
+console.log(parr.join(",").split(","));
+// [ '1', '2', '4', '1', '7', '9', '9', '3', '23' ]
+// 对位数组变为一维数组

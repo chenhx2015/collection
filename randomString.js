@@ -11,3 +11,14 @@ function randomString(n) {
 }
 
 randomString(4);
+
+let a = 3;
+let b = ++a; // 先加 1 再赋值给 b
+let c = a++; // // 先赋值给 c 再加 1
+let str = "p";
+str += "k"; // str = str + 'k'
+
+console.log({ a }); // 5
+console.log({ b }); // 4
+console.log({ c }); // 4
+console.log({ str }); // 'pk'
