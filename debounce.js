@@ -5,15 +5,12 @@
 // 区别：防抖是控制次数，节流是控制频率
 function debounce(func, wait) {
   let timeout;
-  return function() {
-    console.log("111", new Date());
-    let context = this;
-    let args = arguments;
+  return function () {
     if (timeout) {
       clearTimeout(timeout);
     }
     timeout = setTimeout(() => {
-      func.apply(context, args);
+      func.apply(this, arguments);
     }, wait);
   };
 }
@@ -21,8 +18,8 @@ function debounce(func, wait) {
 //   console.log("llll", new Date());
 // }
 
-// let newCount = debounce(count, 1000);
-// newCount.apply(window);
+// let newCount = debounce2(count, 1000);
+// // newCount.apply(window);
 // newCount();
 // newCount();
 // newCount();
@@ -30,27 +27,21 @@ function debounce(func, wait) {
 // 防抖 - 立即执行
 // 立即执行具体思路：如果定时器被赋值过，则先清空定时器，下次重新计时，如果是定时器是未赋值过的，则执行函数，同时在给定秒数之后再清空定时器
 function debounce2(func, wait) {
-  let timeout = null;
-
-  return function() {
-    let context = this;
-    let args = arguments;
-
+  let timeout;
+  return function () {
     if (timeout) clearTimeout(timeout);
-
     let callNow = !timeout;
     timeout = setTimeout(() => {
       timeout = null;
     }, wait);
-
-    if (callNow) func.apply(context, args);
+    if (callNow) func.apply(this, arguments);
   };
 }
 
 // 双剑合璧版
 function debounce3(func, wait, immediate) {
   let timeout;
-  return function() {
+  return function () {
     let context = this;
     let args = arguments;
 
