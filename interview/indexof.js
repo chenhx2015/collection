@@ -26,7 +26,7 @@ function myIndexOf(str, char) {
   }
 }
 let result = myIndexOf(str, "c");
-console.log({ result });
+console.log({ result }); // 3
 
 // 请注意，是字符串的方法（貌似数组也行） && 要考虑到第二个参数 && 要考虑到不仅仅是匹配单个字符
 // 改进如下
@@ -55,4 +55,6 @@ function myIndexOf2(str, char, start) {
 }
 let str2 = "abacdbeabfgg";
 let result2 = myIndexOf2(str2, "ab", 3);
-console.log({ result2 });
+console.log({ result2 }); // 7
+
+// 思考：lastIndexOf 如何实现？

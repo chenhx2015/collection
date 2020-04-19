@@ -11,14 +11,14 @@ function deepTraversal1(node, nodeList = []) {
 }
 
 // 非递归
-let deepTraversal3 = node => {
+let deepTraversal3 = (node) => {
   let stack = [];
   let nodes = [];
   if (node) {
-    // 推入当前处理的node
+    // 推入当前处理的 node
     stack.push(node);
     while (stack.length) {
-      let item = stack.pop();
+      let item = stack.pop(); // 删除最后一个元素，返回该元素
       let children = item.children;
       nodes.push(item);
       // node = [] stack = [parent]
@@ -32,3 +32,9 @@ let deepTraversal3 = node => {
   }
   return nodes;
 };
+
+// 相关知识点
+// push()方法可以在数组的末属添加一个或多个元素
+// shift()方法把数组中的第一个元素删除
+// unshift()方法可以在数组的前端添加一个或多个元素
+// pop()方法把数组中的最后一个元素删除

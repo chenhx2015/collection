@@ -7,4 +7,13 @@ function swap(a, b) {
   console.log([a, b]);
   return [a, b];
 }
-swap(9, 3);
+
+// 或者如下(同理)
+function swap2(a, b) {
+  a = a - b;
+  b = a + b;
+  a = b - a;
+  console.log([a, b]);
+  return [a, b];
+}
+swap2(9, 3);
