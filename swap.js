@@ -17,3 +17,13 @@ function swap2(a, b) {
   return [a, b];
 }
 swap2(9, 3);
+
+// 方法三：使用数组的解构赋值
+function swap3(a, b) {
+  let result = [a, b];
+  result = [b, a];
+  console.log(result);
+  return result;
+}
+let result3 = swap3(4, 6);
+console.log({ result3 }); // [6, 4]

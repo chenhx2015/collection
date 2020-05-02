@@ -46,8 +46,8 @@ delete o.a; //将返回 false, 并且 a 没有被删除
 // --> 而不是像 Object.defineProperty 针对某个属性。只需做一层代理就可以监听同级结构下的所有属性变化，包括新增属性和删除属性
 
 // 2. Proxy也可以监听数组的变化
-// 3. 拦截方式较多
-// 4. Proxy返回一个新对象，可以只操作新对象达到目的，而Object.defineProperty只能遍历对象属性直接修改
+// 3. 拦截方式较多(一共13种)
+// 4. Proxy返回一个新对象，可以只操作新对象达到目的，而 Object.defineProperty 只能遍历对象属性直接修改
 
 // 劣势，缺点：
 // 1. 兼容性问题，无完全 polyfill --> proxy-polyfill，其实现也是残缺的, 只支持 Proxy 的4个 trap：get、set、apply和 construct & 部分支持的 trap 其功能也是残缺的，如 set 不支持新增属性
