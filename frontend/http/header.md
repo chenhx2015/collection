@@ -2,7 +2,7 @@
 
 #### 这几个都是实体首部字段
 1.Content-type: 表示具体请求中的媒体类型信息（都是表单数据发送时的编码类型）
-  数据发送出去后，需要接收的服务端解析成功，一般服务端会根据content-type字段来获取参数是怎么编码的，然后对应去解码。
+  数据发送出去后，需要接收的服务端解析成功，一般服务端会根据 content-type 字段来获取参数是怎么编码的，然后对应去解码。
   最常见的四种取值：(也是四种常见的 POST 提交数据方式 🌿)
   🙋 application/x-www-form-urlencoded:
   浏览器 Headers 对应 Form Data，键值对：key-value
@@ -13,6 +13,10 @@
     title=test&sub%5B%5D=1&sub%5B%5D=2&sub%5B%5D=3 
   ```
   首先，Cntent-Type 被指定为application/x-www-form-urlencoded。其次，提交的数据按照 key1=val1&key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码。大部分服务端语言都对这种方式有很好的支持。
+
+  注意的几点：
+  1.在'no-cors'模式下，我们不能修改 content-type，而 content-type 的值只能是 application/x-www-form-urlencoded、multipart/form-data 或 text/plain
+  2.如果不设置 mode，直接设置 content-type 为 application/json，则 fetch 会默认这是跨域模式（mode:'cors'），在跨域 POST 之前，客户端会先发一条 OPTIONS 请求来”探探路”，如果服务器允许，再继续 POST 数据。对于这种 OPTIONS 请求，需要在服务器配置允许接受 OPTIONS 请求
 
   🙋 multipart/form-data:
   这是另一种非常常见的 POST 数据提交的方式。我们在使用表单上传文件时，必须让 form 的 enctyped 等于这个值
@@ -34,7 +38,7 @@
   （服务端也可以返回未压缩的正文，但这种情况不允许返回 Content-Encoding ）
   目的：压缩内容大小。
   压缩过的文本，只有原始大小的 1/4
-  但是JPG/PNG这类本身已经高度压缩过的二进制文件，不推介开启内容压缩，效果几乎微乎其微，还浪费cpu
+  但是 JPG/PNG 这类本身已经高度压缩过的二进制文件，不推介开启内容压缩，效果几乎微乎其微，还浪费 cpu
   联想到 http/2 头部压缩...
 
   几种取值：
