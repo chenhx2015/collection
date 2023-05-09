@@ -1,7 +1,5 @@
-// 这个有点问题 输出 🤔️
 // 检查括号是否有效
 // 给定一个仅包含字符 '(', ')', '{', '}', '[' 和 ']' 的字符串 s，确定输入字符串是否有效。
-
 // 输入字符串在以下情况下有效：
 // 1.括号必须用相同类型的括号闭合
 // 2.括号必须以正确的顺序闭合
@@ -14,7 +12,12 @@
 // 如果找到右括号，则弹出堆栈顶部的一个元素，并确定当前的右括号是否匹配它。
 
 // 方法一：
-const checkIsValid = function(s) {
+  const leftToRight = {
+    "{": "}",
+    "[": "]",
+    "(": ")"
+  }
+  const checkIsValid = function(s) {
     if (!s) {
       return true;
     }
@@ -31,11 +34,9 @@ const checkIsValid = function(s) {
       console.log('ch', ch)
   
       if (ch === "(" || ch === "{" || ch === "[") {
-        // stack.push(leftToRight[ch]); // 这一行应该是 stack.push(ch) ???
-        stack.push(ch);
+        stack.push(leftToRight[ch]);
       }
       else {
-        console.log('else li', ch, stack.pop())
         // If the stack is not empty and the 
         // openning parenthesis at the top of the stack does not
         // match the current character, it is invalid.
@@ -49,7 +50,32 @@ const checkIsValid = function(s) {
     return !stack.length;
   };
 
-  console.log(checkIsValid("{[]}"));
+  var checkIsValid0 = function(s){
+    //结合题意,空字符串无条件判断为true
+    if(!s)return true
+    //初始化数组stack
+    let stack = []
+    //缓存字符串长度
+    const len = s.length
+    //遍历字符串
+    for(let i=0;i<len;i++){
+      //缓存单个字符
+      const ch = s[i]
+      //判断是否是左括号
+      if(ch==="("||ch==="["||ch==="{"){
+        stack.push(leftToRight[ch])
+      }else{
+        //若栈不为空，且栈顶的左括号没有和当前字符匹配上，那么判为无效
+        if(!stack.length||stack.pop()!==ch){
+          return false
+        }
+      }
+    }
+    //若所有的括号都能配对成功，那么最后栈应该是空的
+    return !stack.length
+  }
+
+  console.log(checkIsValid("{[()]}"));
 
   // 方法二：
   var isValid = function (s) {
@@ -76,4 +102,4 @@ const checkIsValid = function(s) {
         return true;
     }
     return false;
-};
+  };

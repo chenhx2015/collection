@@ -1,4 +1,4 @@
-// 跳台阶 这个思路不是很清楚，思路问题？？？🤔️
+// 跳台阶
 // 一只青蛙一次可以跳上1级台阶，也可以跳上二级，求该青蛙跳上一个n级的台阶总共有多少种跳法
 // （先后次序不同 算不同的结果）
 
@@ -16,18 +16,27 @@ function jumpFloor(n) {
   return jumpFloor(n - 2) + jumpFloor(n - 1);
 }
 
-// 方法二：动态规则实现（这种方法利用斐波那契数列从下往上算，避免重复计算，提高效率）
+// 方法二：动态规划实现（这种方法利用斐波那契数列从下往上算，避免重复计算，提高效率）
 function jumpFloor2(n) {
   if(n <= 2) {
     return n;
   }
   let f = 1;
   let g = 1;
+  // while (n--) {
+  //   g = g + f; // 后一个
+  //   f = g - f; // 前一个
+  //   console.log("g,f", g,f)
+  // }
+  // 上面注释部分就是下面这段
   while (n--) {
+    let temp = g
     g = g + f; // 后一个
-    f = g - f; // 前一个
+    f = temp; // 前一个
+    console.log("g,f", g,f)
   }
   return f;
 }
 // 1, 1, 2, 3, 5
-console.log('jumpFloor2', jumpFloor2(4)); // 5 
+let n = 4
+console.log('jumpFloor', jumpFloor(n), jumpFloor2(n)); // 5 
