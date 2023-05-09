@@ -1,4 +1,4 @@
-// 广度优先遍历
+// 二叉树 广度优先遍历 （BFS）
 let widthTraversal2 = node => {
   let nodes = [];
   let stack = [];

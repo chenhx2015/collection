@@ -1,4 +1,4 @@
-// 深度优先遍历
+// 二叉树 深度优先遍历 （DFS）
 function deepTraversal1(node, nodeList = []) {
   if (node !== null) {
     nodeList.push(node);
