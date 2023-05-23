@@ -23,9 +23,9 @@ let fn2 = a => {
   return a * 10;
 };
 
-let result = compose(fn2, fn1); // 生成组合函数
-let result2 = result(2, 5); // 调用最后生成的组合函数
-console.log("result", result);
+let fn = compose(fn2, fn1); // 生成组合函数
+let result2 = fn(2, 5); // 调用最后生成的组合函数
+console.log("fn", fn);
 // function (...args) {
 //   return a(b(...args));
 // }

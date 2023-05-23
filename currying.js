@@ -43,3 +43,15 @@ console.log(result);
 console.log("result", result); // 6
 let result2 = adder(1, 2, 3)(4);
 console.log("result2", result2); // 10
+
+// 补充一下知识点 & 原理
+// Array.prototype.slice.call(arguments);
+// 这行代码首先是会将 参数 绑定到数组的 slice 方法，这样就可以使用slice方法了
+// slice 内部实现是将起始位置用for循环截取出来，再push进数组 来实现截取的功能 最后返回的是数组
+
+// 类数组转数组的方法有三种
+// 1.Array.prototype.slice.call(arrayLike); // 或者 Array.prototype.splice.call(arrayLike, 0);
+// 2.[].slice.call(arrayLike);
+// 3.一个一个参数 for 循环 push 进去数组 再返回这个数组
+// 4.es6 ： Array.from(arrayLike);
+// 5.Array.prototype.concat.apply([], arrayLike);

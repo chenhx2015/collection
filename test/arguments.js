@@ -14,6 +14,7 @@
 // arguments 只在函数内部起作用
 
 // 为了获取除了已定义参数a、b之外的参数，我们不得不用arguments，并且循环要从索引2开始以便排除前两个参数，这种写法很别扭，只是为了获得额外的rest参数，有没有更好的方法
+
 // 再来看看 rest
 function foo(a, b, ...rest) {
   console.log("a = " + a);

@@ -15,7 +15,7 @@
 // 解释：在这种情况下, 没有交易完成, 所以最大利润为 0。
 
 var maxProfit = function(prices) {
-     let maxProfit = 0;
+  let maxProfit = 0;
   let minPrice = prices[0];
  
   for (let i = 1; i < prices.length; i++) {
