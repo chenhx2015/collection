@@ -4,7 +4,7 @@
 // 方法一：
 function containsDuplicate1(nums) {
   if (nums.length < 1) return false;
-  nums.sort((a, b) => a - b);
+  nums.sort((a, b) => a - b); // a - b 升序
   const len = nums.length;
   for(let i = 0; i < len; i++) {
     if (nums[i] === nums[i+1]) {
