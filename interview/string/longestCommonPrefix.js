@@ -74,5 +74,3 @@ const longestCommonPrefix3 = function (strs) {
 };
 
 console.log(longestCommonPrefix3(['abc', 'abcdf', 'abctr', 'abckj'])); // abc
-
-

@@ -30,7 +30,7 @@ function rotateArr(nums, k) {
     // let p = nums.pop()
     // nums.unshift(p)
     // 或者写成一行
-    nums.unshift(nums.pop())
+    nums.unshift(nums.pop()) // unshift 是在数组的头部插入一个
   }
   return nums;
 }

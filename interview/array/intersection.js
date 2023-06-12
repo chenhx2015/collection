@@ -41,6 +41,12 @@ function intersection3(arr1, arr2) {
 
 console.log('intersection3', intersection3(arr1, arr2)) // [4]
 
+function intersection4(arr1, arr2) {
+  let arr2Set = new Set(arr2);
+  return new Set(arr1.filter((item) => arr2Set.has(item)))
+}
+console.log('intersection4', intersection3(arr1, arr2)) // [4]
+
 // 找两个数组的并集
 // 思路：
 // 方法一：利用解构赋值...和Set的唯一性

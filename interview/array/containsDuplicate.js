@@ -13,6 +13,7 @@ function containsDuplicate1(nums) {
   }
   return false;
 };
+
 console.log(containsDuplicate1([1, 2, 3])); // false
 console.log(containsDuplicate1([1, 1, 2, 3])); // true
 

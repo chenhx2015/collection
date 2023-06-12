@@ -49,4 +49,5 @@ console.log(findLongest(str2));
 // 得到的结果是什么？ ["aaa", "iii", "ss", "fffff"]
 
 let str3 = "aaasdofjaopfjopaiiisjssfopiasdfffff";
-let tempRes = str3.match(/(.)\1+/g);
+let tempRes = str3.match(/(.)\1+/g); // [ 'aaa', 'iii', 'ss', 'fffff' ]
+console.log('tempRes', tempRes);
