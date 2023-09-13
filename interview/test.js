@@ -13,4 +13,21 @@ var moveZeroes = function (arr) {
   return arr;
 };
 let result = moveZeroes(arr);
-console.log({ result });
+console.log({ result }); // { result: [ 1, 3, 12, 0, 0, 0 ] }
+
+let moveZeros2 = (arr) => {
+  const len = arr.length;
+  let j = 0;
+  for(let i = 0; i < len; i++) {
+    if (arr[i] !== 0) {
+      if(i === j) {
+        j++;
+      } else {
+        [arr[j++], arr[i]] = [arr[i], arr[j]]; 
+      }
+    }
+  }
+  return arr;
+}
+
+console.log('moveZeros2', moveZeros2([0, 1, 11, 0, 2, 4, 0])); // [1, 11, 2, 4, 0, 0, 0]

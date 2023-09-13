@@ -12,7 +12,7 @@ function lengthOfLongestSubString(s) {
     str = s.slice(left, right);
     if(str.indexOf(s.charAt(right)) > -1) {
       left++;
-      continue;
+      continue; // 运行的结果，有没有这句都一样
     } else {
       right++;
     }
@@ -20,3 +20,5 @@ function lengthOfLongestSubString(s) {
   }
   return max;
 }
+
+console.log('lengthOfLongestSubString', lengthOfLongestSubString('abcabcbb')); // 3

@@ -16,15 +16,13 @@ let deepTraversal3 = (node) => {
   let nodes = [];
   if (node) {
     // 推入当前处理的 node
+    // 思路：先pop出到nodes里面去，再把pop的孩子放到stack，然后继续下一次pop
+    // 处理尾部
     stack.push(node);
     while (stack.length) {
       let item = stack.pop(); // 删除最后一个元素，返回该元素
       let children = item.children;
       nodes.push(item);
-      // node = [] stack = [parent]
-      // node = [parent] stack = [child3,child2,child1]
-      // node = [parent, child1] stack = [child3,child2,child1-2,child1-1]
-      // node = [parent, child1-1] stack = [child3,child2,child1-2]
       for (let i = children.length - 1; i >= 0; i--) {
         stack.push(children[i]);
       }

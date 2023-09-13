@@ -24,6 +24,12 @@ function rotateMatrix(matrix) {
       matrix[j].push(temp);
     }
   }
+  // 上述循环之后变成如下矩阵:
+  // matrix = [
+  //   [1, 4, 7],
+  //   [2, 5, 8],
+  //   [3, 6, 9]
+  // ]
   for(let k = 0; k < matrix.length; k++) {
     matrix[k] = matrix.reverse();
   }

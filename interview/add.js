@@ -22,4 +22,5 @@ function add() {
 let result1 = add(1, 2, 3)(4);
 // 下面两种形式输出结果值
 console.log("result1", result1); // 10
-// console.log(result1.toString()); // 10
+console.log(result1.toString()); // 10
+

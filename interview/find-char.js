@@ -51,3 +51,28 @@ console.log(findLongest(str2));
 let str3 = "aaasdofjaopfjopaiiisjssfopiasdfffff";
 let tempRes = str3.match(/(.)\1+/g); // [ 'aaa', 'iii', 'ss', 'fffff' ]
 console.log('tempRes', tempRes);
+
+function findLongest2(str) {
+  let count = 0;
+  let maxCount = 0;
+  let cur = str[0];
+  let res = {};
+  for(let i = 0; i < str.length; i++) {
+    const char = str[i]
+    if(char === cur) {
+      count++;
+      if(count > maxCount) {
+        res[char] = count;
+        maxCount = count;
+      }
+      if(count === maxCount) {
+        res[char] = count
+      }
+    } else {
+      count = 1;
+      cur = char;
+    }
+  }
+  return res;
+}
+console.log('findLongest2', findLongest2(str3));

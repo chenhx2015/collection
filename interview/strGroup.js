@@ -10,6 +10,7 @@
  * @param {string} current - 当前的字符串
  * @param {string} temp - 当前固定的字符
 */
+// @todo 这个方法有问题，但是回溯算法可以了解一下
 function stringGroup(list = [], result = [], current = "", temp = "") {
   current += temp;
   if (list.length === 0) {
@@ -28,4 +29,27 @@ function stringGroup(list = [], result = [], current = "", temp = "") {
 }
 
 let str = 'abc';
-console.log('stringGroup', stringGroup(str));
+console.log('stringGroup', stringGroup(str.split())); // 
+
+// 方法二：
+function perm(s) {
+  var result = [];
+  if (s.length <= 1) {
+    return [s];
+  } else {
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      var newStr = s.slice(0, i) + s.slice(i + 1, s.length); // 去掉str中的c，剩下的字符按原组合赋值给newStr，长度是n-1
+      var l = perm(newStr); // c='a',newstr='bc' l=['bc','cb']
+         
+      //result=[]
+      for (var j = 0; j < l.length; j++) {
+        var tmp = c + l[j]; // 将c和l中的字符拼接 j=0, l[j]='bc' tmp='bc'
+        result.push(tmp);   // result = ['abc'], 下一步, j=1,...
+      }
+    }
+  }
+  return result;
+}; 
+
+console.log('perm', perm(str)); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]

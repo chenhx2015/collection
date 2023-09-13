@@ -18,7 +18,7 @@ function factorialize1(n){
 
 // 方法二：ES6 尾调用优化
 function factorialize2(n, total = 1){
-	if(typeof n !== 'number' || typeof total !== 'number') throw new Error('参数必须为整整')
+	if(typeof n !== 'number' || typeof total !== 'number') throw new Error('参数必须为整数')
 	if(n === 1) return total;
 	return factorialize2(n - 1, n * total)
 	// f(3) => f(2, 3 * 2) => f(1, 6) => 6

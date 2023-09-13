@@ -14,8 +14,8 @@ function containsDuplicate1(nums) {
   return false;
 };
 
-console.log(containsDuplicate1([1, 2, 3])); // false
-console.log(containsDuplicate1([1, 1, 2, 3])); // true
+console.log('111', containsDuplicate1([1, 2, 3])); // false
+console.log('222', containsDuplicate1([1, 1, 2, 3])); // true
 
 // 以上复杂度分析
 // 时间复杂度
