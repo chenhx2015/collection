@@ -58,3 +58,8 @@ var dicesProbability = function (n) {
   }    
   return result;
 };
+
+// summary :
+// 启示一：学会使用递归求解
+// 启示二：准确理解骰子数和前一个骰子数与和之间的关系，是解题关键
+// 启示三：学会运用哈希表
