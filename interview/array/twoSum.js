@@ -19,12 +19,12 @@ function sun(arr, target) {
   for(let i = 0; i < arr.length; i++) {
     let tempi = arr[i];
     for(let j = 1; j < arr.length; j++) {
-        if(tempi + arr[j] === target) {
-            return {
-                [i] : tempi,
-                [j] : arr[j]
-            }
+      if(tempi + arr[j] === target) {
+        return {
+          [i] : tempi,
+          [j] : arr[j]
         }
+      }
     }
   }
 }

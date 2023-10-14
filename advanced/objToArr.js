@@ -6,7 +6,7 @@
 function objToArr(obj) {
   let arr = new Array(12).fill(null);
   for( [key, value] of Object.entries(obj)) {
-    arr[key - 1] = value // @todo 看看还有没有其他方式
+    arr[key - 1] = value 
   }
   return arr;
 }

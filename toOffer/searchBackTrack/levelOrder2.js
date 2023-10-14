@@ -27,7 +27,7 @@ function levelOrder2(root) {
   let reverse = false; // 用来标记是奇数行还是偶数行 交替的
   while(queue.length > 0) {
     let length = queue.length;
-    let item = []; // 用来存放每一层
+    let item = []; // 用来存放每一层 因为题目要求是二维数组的 要一一对应
     for(let i = 0; i < length; i++) {
       let tempNode = queue.shift();
       if(reverse) {

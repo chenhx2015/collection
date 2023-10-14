@@ -15,7 +15,7 @@ var getType = (function() {
 
   return function getType(obj) {
     if (obj == null) {
-        return obj + '';
+      return obj + '';
     }
     const str = Object.prototype.toString.call(obj);
     return typeof obj === 'object' || typeof obj === 'function' ? class2type[str] || 'object' : typeof obj;

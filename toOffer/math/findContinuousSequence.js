@@ -37,6 +37,9 @@ var findContinuousSequence = function (target) {
   return res;
 };
 
+console.log('res way1:', findContinuousSequence(9));
+// [[2,3,4],[4,5]]
+
 // 方法二：
 // 分析：
 // 连续整数相加的和等于中间值mid × 整数个数 n

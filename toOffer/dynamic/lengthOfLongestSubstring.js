@@ -3,17 +3,16 @@
 // 计算该最长子字符串的长度。
 
 // 示例 1:
-
 // 输入: "abcabcbb"
 // 输出: 3 
 // 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
-// 示例 2:
 
+// 示例 2:
 // 输入: "bbbbb"
 // 输出: 1
 // 解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
-// 示例 3:
 
+// 示例 3:
 // 输入: "pwwkew"
 // 输出: 3
 // 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
@@ -35,24 +34,25 @@ var lengthOfLongestSubstring = function (s) {
   let res = 0;
   // 右指针小于字符串的长度的时候，是进入循环的条件
   while (right < s.length) {
-
-      // 因为我们移动的是右指针，所以要先判断哈希表中是否含有右指针指向的元素
-      if (window.has(s[right])) {
-          window.set(s[right],window.get(s[right]) + 1);
-      } else {
-          window.set(s[right],1);
-      }
-      // 判断右指针指向的元素是否出现重复
-      while (window.get(s[right]) > 1) {
-          // 左指针指向的元素出现的次数-1，然后左指针右移，直到出现重复的那个元素不再重复
-          window.set(s[left],window.get(s[left]) - 1);
-          left++;
-      }
-      right++;
-      res = Math.max(res,right - left);
+    // 因为我们移动的是右指针，所以要先判断哈希表中是否含有右指针指向的元素
+    if (window.has(s[right])) {
+      window.set(s[right], window.get(s[right]) + 1);
+    } else {
+      window.set(s[right],1);
+    }
+    // 判断右指针指向的元素是否出现重复
+    while (window.get(s[right]) > 1) {
+      // 左指针指向的元素出现的次数-1，然后左指针右移，直到出现重复的那个元素不再重复
+      window.set(s[left], window.get(s[left]) - 1);
+      left++;
+    }
+    right++;
+    res = Math.max(res,right - left);
   }
   return res;
 };
+
+console.log('test', lengthOfLongestSubstring('abcabcbb')); // 3
 
 // 总结：
 // 启示一：学会使用滑动窗口 + 哈希表

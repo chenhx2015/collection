@@ -7,13 +7,18 @@
 // 序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，
 // 但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
 
-// 🤔️ 这个过程没太搞懂
 function validateStackSequences(pushed, popped) {
+  // pushed 是压栈序列
+  // popped 是弹出序列
   const stack = []
   for (let i = 0; i < pushed.length; i++) {
     stack.push(pushed[i])
-    while (stack.length && popped.length && popped[0] === stack[stack.length-1]) {
-      popped.shift()
+    while (
+      stack.length
+      && popped.length 
+      && popped[0] === stack[stack.length-1]
+    ) {
+      popped.shift(); // popped 是弹出序列
       stack.pop()
     }
   }

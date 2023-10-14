@@ -26,6 +26,7 @@ function entryMap(obj) {
   for(let key of keysArr) {
     key.split('.').reduce((prev, curr, index, array) => {
       // 注意下面的判断及返回值
+      // 最后一个就把值赋上去
       if(index === array.length - 1) {
         prev[curr] = obj[key];
         return;

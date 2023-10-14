@@ -28,15 +28,15 @@ function findNumberIn2DArray2(matrix, target) {
   }
   let x = 0;
   let y = matrix[0].length - 1;
-  while(x<matrix.length && y>=0){
-      let num = matrix[x][y];
-      if(num == target){
-          return true;
-      }else if(num > target){
-          y--;
-      }else{
-          x++;
-      }
+  while(x < matrix.length && y >= 0){
+    let num = matrix[x][y];
+    if(num == target){
+      return true;
+    }else if(num > target){
+      y--;
+    }else{
+      x++;
+    }
   }
   return false;
 }

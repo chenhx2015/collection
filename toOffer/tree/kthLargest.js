@@ -34,21 +34,21 @@
  * @param {number} k
  * @return {number}
  */
-// 思路：(先序遍历：右根左)
-// 按照右根左的遍历顺序，
+// 思路：
+// 按照 右根左 的遍历顺序，
 // 就是从大到小的遍历顺序。每遍历一个，k–，当k==0时，即为所求。
 
 var kthLargest = function(root, k) {
   var res;
-  var  dfs = function(cur) {
-      if(!cur) return;  
-      dfs(cur.right);
-      k--;
-      if(k == 0) {
-        res = cur.val;
-        return;
-      }
-      dfs(cur.left);   
+  var dfs = function(cur) {
+    if(!cur) return;  
+    dfs(cur.right);
+    k--;
+    if(k == 0) {
+      res = cur.val;
+      return;
+    }
+    dfs(cur.left);   
   }
   dfs(root);
   return res;

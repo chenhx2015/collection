@@ -40,12 +40,15 @@ function treeToDoublyList(root) {
 
   function dfs(node) {
     if(node === null) return;
-    // 进行中序遍历
+    // 进行中序遍历 左根右
     dfs(node.left);
     // 第一个没有左儿子节点，就是最左侧的节点，链表的第一个节点
     if(head === null) {
       head = cur = node;
     } else {
+      // 对当前节点进行处理，
+      // 把当前节点node 和 cur 进行链表的链接上，即left right 的处理，
+      // 并把cur挪到node的位置
       // cur --- node node 为当前节点
       cur.right = node;
       node.left = cur;

@@ -26,15 +26,16 @@
 // 只能指向 map 数据结构中的值的节点
 
 function copyRandomList(head) {
-  // 首先创建一个Map，键用来存储head指针域，值用来存储复制的节点
+  // 首先创建一个 Map，键用来存储 head 指针域，值用来存储复制的节点
   let node = head;
   const m = new Map();
   while(node){
     m.set(node, new Node(node.val));
     node = node.next; // 遍历下一个node
   }
-  // 到这里，链表的键已经存放的是指针，值存放的是next域和random域为空，值为指针所指的val
-  // 让node重新指向head
+  // 到这里，链表的键已经存放的是指针，
+  // 值存放的是 next 域和 random 域为空，值为指针所指的 val
+  // 让 node 重新指向 head
   node = head;
   while(node) {
     m.get(node).next = node.next ? m.get(node.next) : null;

@@ -10,7 +10,7 @@ function intersection(arr1, arr2) {
     let _item = arr1[i]
     for(let j = 0; j < arr2.length;j++){
       if(_item === arr2[j]){
-          intersection.push(_item)
+        intersection.push(_item)
       }
     }
   }

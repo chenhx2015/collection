@@ -21,14 +21,19 @@
 
 var lastRemaining = function(n, m) {
   let arr = []
-  for (let i = 0;i < n;i++) {
-      arr.push(i);
+  for (let i = 0; i < n; i++) {
+    arr.push(i);
   }
   let flag = 0;
   while (arr.length !== 1) {
-      flag = (flag + m - 1) % arr.length;
-      arr.splice(flag,1);
+    flag = (flag + m - 1) % arr.length;
+    arr.splice(flag, 1);
   }
   
   return arr[0];
 };
+
+// m 是指第几个，不是从0开始的下标，而是实际的第几个
+console.log('res', lastRemaining(10, 17)); // 2
+console.log('res', lastRemaining(8, 2)); // 3
+console.log('res', lastRemaining(10, 3)); // 3

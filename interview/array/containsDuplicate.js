@@ -31,13 +31,13 @@ console.log('222', containsDuplicate1([1, 1, 2, 3])); // true
 function containsDuplicate2(nums) {
   let set = new Set();// 使用哈希表缓存已知元素
     for( let num of nums){
-    // 如果数字已存在于哈希表中，表示出现重复，返回true
-        console.log(num)
-        if(set.has(num)){
-            return true
-        }
-    // 将遇到的数字缓存在哈希表
-        set.add(num)
+      // 如果数字已存在于哈希表中，表示出现重复，返回true
+      console.log(num)
+      if(set.has(num)){
+        return true
+      }
+      // 将遇到的数字缓存在哈希表
+      set.add(num)
     }
     // 正常退出循环，表示没有重复，返回false
     return false

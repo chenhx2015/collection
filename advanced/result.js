@@ -1,5 +1,5 @@
 // 改造下面代码 使之输出 0 - 9
-for (var i = 0; i< 10; i++){
+for (var i = 0; i < 10; i++){
 	setTimeout(() => {
 		console.log(i);
     }, 1000)

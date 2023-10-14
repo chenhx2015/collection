@@ -25,3 +25,7 @@ const intersect = (num1, num2) => {
 const nums1 = [1, 2, 2, 1];
 const nums2 = [2, 2]
 console.log('intersect', intersect(nums1, nums2)); // [2, 2]
+
+const nums3 = [1, 2, 4, 5, 6, 7];
+const nums4 = [2, 2, 5, 6, 7]
+console.log('intersect', intersect(nums3, nums4)); // [2, 5, 6, 7]

@@ -23,7 +23,7 @@ console.log('moveZeroes1', moveZeroes1([1, 0, 3, 0, 8])); // [1, 3, 8, 0, 0]
 // 复杂度 O(n)
 function moveZeroes2(arr) {
   let j = 0;
-  for(let i = 0; i< arr.length; i++) {
+  for(let i = 0; i < arr.length; i++) {
     if(arr[i] !== 0) {
       if(i === j) {
         j++

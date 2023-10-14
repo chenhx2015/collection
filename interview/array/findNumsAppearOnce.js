@@ -58,18 +58,18 @@ console.log('findNumsAppearOnce3', findNumsAppearOnce3([1, 2, 4, 3, 5, 4, 1])); 
 var singleNumber = function(nums) {
   let map = new Map();
   let res = [];
-   for(let i = 0; i<nums.length;i++){
-       if(map.has(nums[i])){
-           map.set(nums[i],map.get(nums[i])+1);
-       }else{
-           map.set(nums[i],1)
-       }
-   }
-   for(let [key,value] of map.entries()){
-       if(value===1){
-          //  return key 这样只能找出第一个 2, 要改成下面的这一行才行
-          res.push(key);
-       }
+    for(let i = 0; i < nums.length; i++){
+      if(map.has(nums[i])){
+        map.set(nums[i], map.get(nums[i]) + 1);
+      } else {
+        map.set(nums[i], 1)
+      }
+    }
+   for(let [key, value] of map.entries()){
+      if(value===1){
+        // return key 这样只能找出第一个 2, 要改成下面的这一行才行
+        res.push(key);
+      }
    }
   return res;
 };

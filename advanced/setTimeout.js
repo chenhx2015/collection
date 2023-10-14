@@ -2,8 +2,8 @@
 // 阐述实现的效果与 setInterval 的差异、
 function mySetInterval() {
   mySetInterval.timer = setTimeout(() => {
-      arguments[0]()
-      mySetInterval(...arguments)
+    arguments[0]()
+    mySetInterval(...arguments)
   }, arguments[1])
 }
 

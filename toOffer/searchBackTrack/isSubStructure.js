@@ -31,14 +31,14 @@ function isSubStructure(A, B) {
   if (
     A.val === B.val 
     && isSameTree(A.left, B.left)
-    && isSmaeTree(A.right, B.right)
+    && isSameTree(A.right, B.right)
   ) return true;
   // 这里如果第一次传进来的AB根节点都不相同，那么就会进递归，
   // 分别判断A的左子树和右子树是否存在B的结构，所以这里用或关系即可
   return isSubStructure(A.left, B) || isSubStructure(A.right, B)
 
   function isSameTree(nodeA, nodeB) {
-    if(nodeB === null) return true;
+    if(nodeB === null) return true; // 注意这个条件判断
     if(nodeA === null) return false;
     if(nodeA.val === nodeB.val) 
       return isSameTree(nodeA.left, nodeB.left) && isSameTree(nodeA.right, nodeB.right)

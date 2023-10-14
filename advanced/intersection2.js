@@ -14,10 +14,10 @@ function intersect2(nums1, nums2) {
   let res = [];
   let obj = toMap(nums1);
   for (let i of nums2) {
-      if (obj[i]) {
-          res.push(i)
-          obj[i]--
-      }
+    if (obj[i]) {
+        res.push(i)
+        obj[i]--
+    }
   }
   return res;
 }
@@ -26,8 +26,8 @@ function toMap(arr) {
   //辅助函数  用于将数组转成map 键值分别是元素和其数量
   let obj = {}
   for (let i of arr) {
-      if (obj[i]) obj[i]++
-      else obj[i] = 1
+    if (obj[i]) obj[i]++
+    else obj[i] = 1
   }
   return obj
 }

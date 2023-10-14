@@ -19,12 +19,12 @@
 // 表示该索引位置的元始丑数你已经用过了,而且成功取到了成为新的丑数了.
 
 function nthUglyNumber(n) {
-  let dp = new int[n];
-  dp[0]=1;
-  let p2=0,p3=0,p5=0;
+  let dp = new Array[10]; // 长度为 10 的一个数组
+  dp[0] = 1;
+  let p2 = 0, p3 = 0, p5 = 0;
   for(let i = 1; i < n; i++){
-    let a = dp[p2]*2,b = dp[p3]*3,c = dp[p5]*5;
-    dp[i] = Math.min(a,Math.min(b,c));
+    let a = dp[p2] * 2, b = dp[p3] * 3, c = dp[p5] * 5;
+    dp[i] = Math.min(a, Math.min(b,c));
     if(dp[i] == a) p2++;
     if(dp[i] == b) p3++;
     if(dp[i] == c) p5++;

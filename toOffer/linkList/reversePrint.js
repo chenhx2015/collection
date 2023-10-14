@@ -30,11 +30,11 @@ function reversePrint2(head){
   let num = new Array();
   let stack = [];
   while(head){
-      stack.push(head.val);
-      head = head.next;
+    stack.push(head.val);
+    head = head.next;
   }
   while(stack.length){
-      num.push(stack.pop());
+    num.push(stack.pop());
   }
   return num;
 }

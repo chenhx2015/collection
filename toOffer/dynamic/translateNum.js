@@ -21,42 +21,43 @@
 
 // 翻译12、258和翻译1、2、258这两种情况存在重复子问题：翻译258。
 
-var translateNum = function(num) {
+var translateNum1 = function(num) {
   const str = num.toString();
   var length = str.length;
-  if(length<=0)
-      return 0;
+  if(length <= 0)
+    return 0;
   return dfs(str,0);
 };
-var dfs = function(str,pointer){
-  if(pointer >= str.length-1) return 1;
-  var tmp = Number(str[pointer]+str[pointer+1]);
-  if(tmp>=10 && tmp<=25){
-      return dfs(str,pointer+1)+dfs(str,pointer+2);
+var dfs = function(str, pointer){
+  if(pointer >= str.length - 1) return 1;
+  var tmp = Number(str[pointer] + str[pointer + 1]);
+  if(tmp >= 10 && tmp <= 25){
+    return dfs(str, pointer + 1) + dfs(str, pointer + 2);
   }else{
-      return dfs(str,pointer+1);
+    return dfs(str, pointer + 1);
   }
 }
+console.log('translateNum1:', translateNum1(12258)); // 5 表示有5种方法
 // 上述重复子问题一般在有两种翻译方法的时候存在，可以考虑通过增加备忘录的方式来进行算法优化。
-// 如：创建数组memo，记录对应索引之后字符的翻译方法种类。在执行过程中先判断是否已经计算过，以此提高算法效率。
+// 如：创建数组memo，记录对应索引之后字符的翻译方法种类。
+// 在执行过程中先判断是否已经计算过，以此提高算法效率。
 // 优化后的算法：
 
 var translateNum = function(num) {
   const str = num.toString();
   var length = str.length;
   const memo = new Array(length);
-  memo[length-1] = 1;
-  var dfs=(str,pointer,memo)=>{
-    if(pointer >= str.length-1) return 1;
-    var tmp = Number(str[pointer]+str[pointer+1]);
-    if(memo[pointer]) return memo[pointer];
-    if(tmp>=10 && tmp<=25){
-        memo[pointer] = dfs(str,pointer+1,memo)+dfs(str,pointer+2,memo);
-    }else{
-        memo[pointer] = dfs(str,pointer+1,memo);
+  memo[length - 1] = 1; // 即最后一个字符的值， memo 是个数组
+  var dfs = (str, pointer, memo) => {
+    if (pointer >= str.length - 1) return 1;
+    var tmp = Number(str[pointer] + str[pointer + 1]);
+    if (memo[pointer]) return memo[pointer];
+    if (tmp >= 10 && tmp <= 25){
+      memo[pointer] = dfs(str, pointer + 1, memo) + dfs(str, pointer + 2, memo);
+    } else {
+      memo[pointer] = dfs(str, pointer + 1, memo);
     }
     return memo[pointer];
   };
-  return dfs(str,0,memo);
+  return dfs(str, 0, memo);
 };
-
