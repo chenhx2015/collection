@@ -7,10 +7,10 @@ function insertion_sort(arr) {
     current = arr[i];
     // 如果当前这个比上一个小 则交换位置
     while (preIndex >= 0 && current < arr[preIndex]) {
-      arr[preIndex + 1] = arr[preIndex];
+      arr[preIndex + 1] = arr[preIndex]; // 右边更小的换到左边来
       preIndex--; // 再继续往前一个比 注意此处是内层循环
     }
-    arr[preIndex + 1] = current;
+    arr[preIndex + 1] = current; // 往后挪一个
   }
   return arr;
 }

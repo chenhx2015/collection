@@ -17,6 +17,7 @@ let deepTraversal3 = (node) => {
   if (node) {
     // 推入当前处理的 node
     // 思路：先pop出到nodes里面去，再把pop的孩子放到stack，然后继续下一次pop
+    // 反的加进去 顺的取出来
     // 处理尾部
     stack.push(node);
     while (stack.length) {
