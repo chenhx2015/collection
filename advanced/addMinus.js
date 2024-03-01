@@ -30,7 +30,7 @@ class MyNumber{
 }
 
 let n = new MyNumber(5)
-let result= n.add(4).minus(2)
+let result = n.add(4).minus(2)
 console.log('n', +n)
 console.log('result %d', result) 
 // result MyNumber { val: 7 } 其中 %d是占位符

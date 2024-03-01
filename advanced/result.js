@@ -8,7 +8,7 @@ for (var i = 0; i < 10; i++){
 
 // 改造如下：
 // 方法一：利用 let 块级作用域
-for (let i = 0; i< 10; i++){
+for (let i = 0; i < 10; i++){
 	setTimeout(() => {
 		console.log(i);
     }, 1000)
@@ -22,7 +22,7 @@ for (var i = 0; i < 10; i++){
 }
 
 // 方法三：利用立即执行函数和闭包构成独立作用域
-for (var i = 0; i< 10; i++){
+for (var i = 0; i < 10; i++){
 	(function(i) {
     setTimeout(() => {
       console.log(i);

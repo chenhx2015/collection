@@ -31,15 +31,35 @@ function rotateMatrix(matrix) {
   //   [3, 6, 9]
   // ]
   for(let k = 0; k < matrix.length; k++) {
-    matrix[k] = matrix.reverse();
+    matrix[k].reverse();
   }
   return matrix;
 }
 
-console.log('rotateMatrix', rotateMatrix(matrix1));
+console.log('rotateMatrix', rotateMatrix(matrix1)); // 这个结果是对的
+// [
+//   [7, 4, 1],
+//   [8, 5, 2],
+//   [9, 6, 3],
+// ]
 
-// 方法二： 🤔️这个没看懂
-function rotateMatrix2(matrix) {
+// 方法二：
+var rotate2 = function(matrix) {
+  for(var i=0;i<matrix.length;i++){
+    for(var j=i;j<matrix[i].length;j++){
+      [matrix[i][j],matrix[j][i]] = [matrix[j][i],matrix[i][j]]
+    }
+  }
+
+  for(var i=0;i<matrix.length;i++){
+    matrix[i].reverse()
+  }
+  return matrix
+};
+console.log('rotate2', rotate2(matrix1));
+
+// 方法三： 🤔️这个没看懂
+function rotateMatrix3(matrix) {
   if(matrix === null) {
     return
   }
@@ -56,4 +76,5 @@ function rotateMatrix2(matrix) {
   return matrix;
 }
 
-console.log('rotateMatrix2', rotateMatrix2(matrix1));
+console.log('rotateMatrix3', rotateMatrix3(matrix1));
+// rotateMatrix2 [ [ 9, 8, 7 ], [ 6, 5, 4 ], [ 3, 2, 1 ] ]

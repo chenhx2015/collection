@@ -37,4 +37,4 @@ let arr2 = [3, 5, 4, 1, 5]
 let arr3 = [5, 7, 1, 3, 1, 5]
 
 console.log(intersectN(arr1, arr2, arr3)) //[ 5, 1, 3, 5 ] 
-console.log('intersection', intersection(arr1, arr2, arr3));
+console.log('intersection', intersectN(arr1, arr2, arr3));

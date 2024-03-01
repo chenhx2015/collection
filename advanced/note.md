@@ -51,3 +51,33 @@
 7. 研究一下正则表达式，及其几个匹配的方法
 8. 研究一下 Symbol
 9. 位运算
+
+常见的手写算法题：
+  1. 实现 bind(), apply(), call()
+  2. 实现 instanceof
+  3. 实现 new
+  4. 实现 jsonp()
+  5. 实现 Promise
+  6. 实现 Promise.all()
+  7. 实现 Promise.race()
+  8. 实现 EventEmitter 订阅监听模式
+  9. setTimeout 实现 setIntervel
+  10. 深拷贝
+  11. 数组拍平，数组扁平化，对象扁平化
+  12. 防抖/节流
+  13. 函数柯里化
+  14. 快速排序
+  15. 归并排序
+  16. 实现继承
+  17. 实现一个redux
+  18. 深度优先遍历二叉树（递归和不递归）
+  19. 链表反转 / 合并两个有序链表
+  20. 树的最大深度
+  22. 最长严格递增子序列
+  23. 三树之和
+  24. ES5 实现 Object.assigns
+
+算法题练习地址：
+  1. https://www.nowcoder.com/exam/oj/ta?page=1&pageSize=50&search=HJ&tpId=37&type=37
+  2. https://www.nowcoder.com/exam/oj
+  3. https://www.nowcoder.com/exam/oj/ta?page=1&tpId=13&type=13

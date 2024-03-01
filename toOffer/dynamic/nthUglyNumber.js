@@ -21,7 +21,7 @@
 function nthUglyNumber(n) {
   let dp = new Array[10]; // 长度为 10 的一个数组
   dp[0] = 1;
-  let p2 = 0, p3 = 0, p5 = 0;
+  let p2 = 0, p3 = 0, p5 = 0; // 分别代表当前2、3 、5这些系数所叠加的丑数的索引位置index,
   for(let i = 1; i < n; i++){
     let a = dp[p2] * 2, b = dp[p3] * 3, c = dp[p5] * 5;
     dp[i] = Math.min(a, Math.min(b,c));

@@ -4,7 +4,7 @@ const normalize = (str) => {
   var result = {}
   str.split(/[\[\]]/g).filter(Boolean).reduce((obj, item, index, a) => {
     obj.value = item
-    if(index !== a.length -1) {
+    if(index !== a.length - 1) {
       return (obj.children = {})
     }
   }, result)

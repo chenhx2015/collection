@@ -72,6 +72,7 @@ class LinkedList {
       let previous; // 暂存当前位置的前一个
       let position = 0;
       if(index === 0) {
+        // 把 current.next 赋值出去
         this.head = current.next; // 要删除的是第一个位置，就得改变头指针指向
       } else {
         while(position++ < index) {
@@ -95,6 +96,7 @@ class LinkedList {
       let previous;
       let position = 0;
       if(index === 0) {
+        // 把 current 和 node 赋值出去
         node.next = current;
         this.head = node;
       } else {
@@ -102,6 +104,7 @@ class LinkedList {
           previous = current;
           current = current.next;
         }
+        // 把 current 和 node 赋值出去
         node.next = current;
         previous.next = node;
       }

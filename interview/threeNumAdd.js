@@ -37,4 +37,9 @@ function findThree(arr, target) {
     }
     return result;
   }
+
+let nums = [5, 2, 1, 1, 3, 4, 6] 
+let target = 8;
+console.log('findThree:', findThree(nums, target)); 
+// [ [ 1, 1, 6 ], [ 1, 2, 5 ], [ 1, 3, 4 ] ]
   

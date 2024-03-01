@@ -29,3 +29,8 @@ console.log('intersect', intersect(nums1, nums2)); // [2, 2]
 const nums3 = [1, 2, 4, 5, 6, 7];
 const nums4 = [2, 2, 5, 6, 7]
 console.log('intersect', intersect(nums3, nums4)); // [2, 5, 6, 7]
+
+const nums5 = [9, 7, 3, 2, 1];
+const nums6 = [7, 3, 9, 2, 10];
+console.log('intersect', intersect(nums5, nums6)); // [7, 3, 9, 2] 这个有点问题
+// 所以排好序的才不会有这个问题

@@ -24,7 +24,7 @@ console.log(findNumberIn2DArray(m, 20)); // false
 
 function findNumberIn2DArray2(matrix, target) {
   if(matrix.length == 0 || matrix[0].length == 0){
-      return false;
+    return false;
   }
   let x = 0;
   let y = matrix[0].length - 1;

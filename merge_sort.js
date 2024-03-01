@@ -4,7 +4,7 @@
 // 时间复杂度是O(n*logN);
 // 分: 每次都需要把数组劈成两半,2^k = n k= logN 有个二的但是数量级是logN.
 // 合: O(n);极端情况, 每个都分成长度1,也就是n个数组合并
-// 时间复杂度n*logn
+// 时间复杂度n*logN
 
 function merge(left, right) {
   let temp = new Array();
