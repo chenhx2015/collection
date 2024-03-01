@@ -100,7 +100,7 @@ function LCS4(s1,s2){
 
   // 遍历短的字符串，从大到小递减
   for (let j = strLen; j > 0; j--) {
-    // 不同的长度有总共有i个可能，从做到右遍历
+    // 不同的长度有总共有i个可能，从左到右遍历
     for (let i = 0; i <= strLen - j; i++) {
       // 截取出短字符串的部分字符串
       commonStr = shortStr.substr(i, j);
