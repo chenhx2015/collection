@@ -1,11 +1,11 @@
-// 快速排序
+// 快速排序 🌿🌿🌿
 // 时间复杂度
 // 递归的时间复杂度O(logN);
 // 分区 O(n) 寻找所有比基准小的
 // 时间复杂度O(nlogN)
 
 function quickSort(arr) {
-  if (arr.length <= 1) {
+  if (arr.length <= 1) { // 注意：这个地方不能只判断等于1，会报错，不知道为什么？？？
     return arr;
   }
   var leftArr = [];

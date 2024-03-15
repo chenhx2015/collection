@@ -1,4 +1,4 @@
-// 实现 instanceOf 
+// 实现 instanceOf 🌿🌿🌿
 // 概念：instanceOf 运算符是用来检测某个构造函数的 prototype 属性是否出现在某个实例的原型链上
 // 通俗的理解：instanceOf 是个运算符，可以用来判断某一个对象的类型，原理就是利用了原型和原型链
 // 基本用法 A instanceOf B // true or false

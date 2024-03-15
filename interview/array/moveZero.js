@@ -1,4 +1,4 @@
-// 移动零
+// 移动零 🌿🌿🌿
 // 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
 
 // 方法一：splice push
@@ -24,6 +24,7 @@ console.log('moveZeroes1', moveZeroes1([1, 0, 3, 0, 8])); // [1, 3, 8, 0, 0]
 function moveZeroes2(arr) {
   let j = 0;
   for(let i = 0; i < arr.length; i++) {
+    // 只挪动非0元素，是0的就先不动
     if(arr[i] !== 0) {
       if(i === j) {
         j++

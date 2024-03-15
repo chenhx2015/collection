@@ -1,4 +1,4 @@
-// 手动实现 call 方法
+// 手动实现 call 方法 🌿🌿🌿
 // 基本思想是把fn.call(obj,args)中的fn赋值为obj的属性，然后调用obj.fn即可实现fn中this指向的改变
 Function.prototype.myCall = function(context = window) {
   // myCall函数的参数，没有传参默认是指向 window

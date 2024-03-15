@@ -1,17 +1,20 @@
-// 归并排序
+// 归并排序 🌿🌿🌿
 // 分治的思想
 // 时间复杂度
 // 时间复杂度是O(n*logN);
 // 分: 每次都需要把数组劈成两半,2^k = n k= logN 有个二的但是数量级是logN.
 // 合: O(n);极端情况, 每个都分成长度1,也就是n个数组合并
-// 时间复杂度n*logN
+// 时间复杂度 n*logN (和快速排序一样)
+// 复杂度为 O(nlogn) 的：快速排序、归并排序、插入排序、堆排序、希尔排序
 
 function merge(left, right) {
   let temp = new Array();
   while (left.length > 0 && right.length > 0) {
     // 从左右子数组的最小元素中选择较小的元素 push 到 arr
     if (left[0] < right[0]) {
-      temp.push(left.shift());
+      // 注意：这里是shift出来的，而不是直接拿第0个元素；
+      // 因为 shift 出来才会改变元素，让数组里面慢慢减少元素 从而进入下一次 while 循环
+      temp.push(left.shift()); 
     } else {
       temp.push(right.shift());
     }
@@ -36,5 +39,3 @@ function mergeSort(arr) {
 }
 
 console.log('mergeSort', mergeSort([4, 3, 8, 9, 7])); // [ 3, 4, 7, 8, 9 ]
-
-

@@ -1,4 +1,5 @@
-// 插入排序
+// 插入排序 🌿🌿🌿
+// 时间复杂度 O(n^2)
 function insertion_sort(arr) {
   let len = arr.length;
   let preIndex, current;

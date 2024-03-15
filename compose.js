@@ -1,3 +1,4 @@
+// 实现 compose 🌿🌿🌿
 function compose(...funcs) {
   if (funcs.length === 0) {
     return arg => arg;

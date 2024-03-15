@@ -1,4 +1,4 @@
-// 二维数组中的查找
+// 二维数组中的查找 🌿🌿🌿
 // 在一个 n * m 的二维数组中，每一行都按照从左到右 非递减 的顺序排序，
 // 每一列都按照从上到下 非递减 的顺序排序。请完成一个高效的函数，
 // 输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
@@ -28,7 +28,10 @@ function findNumberIn2DArray2(matrix, target) {
   }
   let x = 0;
   let y = matrix[0].length - 1;
-  while(x < matrix.length && y >= 0){
+  // 注意这里的判断条件 
+  // 因为后面 y是往左移动，所以要保证是y>=0
+  // x 是往下移动，也就是往后，所以要保证 x < matrix.length
+  while(x < matrix.length && y >= 0){ 
     let num = matrix[x][y];
     if(num == target){
       return true;

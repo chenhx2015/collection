@@ -1,4 +1,4 @@
-// 手动实现 apply 方法
+// 手动实现 apply 方法 🌿🌿🌿
 Function.prototype.myApply = function(context = window) {
   context.fn = this; // 为对象添加方法（this 指向调用 myCall 的函数）
   let res;

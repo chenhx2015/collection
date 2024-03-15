@@ -1,4 +1,4 @@
-// 三数之和
+// 三数之和 🌿🌿🌿
 // 给定一个数组nums，判断 nums 中是否存在三个元素a，b，c，使得 a + b + c = target，找出所有满足条件且不重复的三元组合
 // 输入： nums: [5, 2, 1, 1, 3, 4, 6] ；target:8
 // 输出： [[1, 1, 6], [1, 2, 5], [1, 3, 4]]
@@ -14,7 +14,7 @@ function findThree(arr, target) {
       let left = i + 1;
       let right = arr.length - 1;
       
-      // 双端指针left、right
+      // 双端指针left、right ; 也有点二分查找的思维在里面 判断条件也是一样的
       while (left < right) {
         let sum = arr[i] + arr[left] + arr[right];
         if (sum > target) {
@@ -24,6 +24,7 @@ function findThree(arr, target) {
         } else {
           // 先取arr[left]，然后left++, 两步合成一步；arr[right--]同样的逻辑
           result.push([arr[i], arr[left++], arr[right--]]);
+          // 这个判断有点奇怪 ？？？
           while (arr[left] === arr[left - 1]) {
             // 跳过重复的arr[left]值,
             left++;

@@ -1,4 +1,4 @@
-// 手动实现一个 bind
+// 手动实现一个 bind 🌿🌿🌿
 Function.prototype.myBind = function(context = window) {
   let fn = this // 调用bind的函数
   let args = [...arguments].slice(1); // myBind 的参数

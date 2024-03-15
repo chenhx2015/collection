@@ -1,4 +1,4 @@
-// 如何实现 Object.assign() ?
+// 如何实现 Object.assign() 🌿🌿🌿
 function myAssign(target, ...objs){
   if(target === null || target === undefined){
     throw new TypeError("can not convert null or undefined to object")
@@ -34,6 +34,7 @@ Object.defineProperty(Object, 'myAssign', {
 
 // 补充知识点：
 // Object.assign() 的基本用法
+// 只有一级属性的时候 它是深拷贝，有二级以及更多了 就是浅拷贝了
 // 要实现 Object.assign()，首先了解它的大概用法：
 // 接受的第一个参数表示目标对象（浅拷贝的结果），如果是 null 或者 undefined，直接报错；
 // 如果是对象字面量或者数组，直接使用；如果是基本类型，则装箱为对应的对象。
@@ -44,3 +45,18 @@ Object.defineProperty(Object, 'myAssign', {
 
 // 第一个参数往后的参数，如果是 null 或者 undefined，那么直接跳过；
 // 其余的情况则尝试找出它们的可枚举属性，但实际上，只有字符串、数组、对象字面量这些类型是具有可枚举属性的。
+
+
+// 扩展：defineProperty 和 Proxy 的区别
+// 1：从效果上讲，表现是一致的
+
+// 2: Object.defineProperty只能劫持对象的属性，而Proxy是直接代理对象。
+// 由于 Object.defineProperty 只能对属性进行劫持，需要遍历对象的每个属性，
+// 如果属性值也是对象，则需要深度遍历。而 Proxy 直接代理对象，不需要遍历操作。
+
+// 3: Object.defineProperty 劫持的是对象的属性，所以新增属性时，需要重新遍历对象（改变属性不会自动触发setter），
+// 对其新增属性再使用 Object.defineProperty 进行劫持
+
+// 4: defineProperty会污染原对象（关键区别）
+// proxy去代理了ob，他会返回一个新的代理对象不会对原对象ob进行改动，
+// 而 defineproperty 是去修改元对象，修改元对象的属性，而 proxy 只是对元对象进行代理并给出一个新的代理对象。

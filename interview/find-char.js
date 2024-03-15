@@ -1,4 +1,4 @@
-// 找出字符串中连续出现最多的字符和个数
+// 找出字符串中连续出现最多的字符和个数 🌿🌿🌿
 // 'abcaakjbb' => {'a': 2, 'b':2}
 // 'ababkejsbcccwqaa' => {'c':3}
 // 请注意：是连续出现的
@@ -52,14 +52,15 @@ let str3 = "aaasdofjaopfjopaiiisjssfopiasdfffff";
 let tempRes = str3.match(/(.)\1+/g); // [ 'aaa', 'iii', 'ss', 'fffff' ]
 console.log('tempRes', tempRes);
 
+// 就看这个方法就可以
 function findLongest2(str) {
   let count = 0;
   let maxCount = 0;
-  let cur = str[0];
+  let cur = str[0]; // 先拿出第一个字符
   let res = {};
   for(let i = 0; i < str.length; i++) {
     const char = str[i]
-    if(char === cur) {
+    if(char === cur) { // 把第一个拿出来的字符 和 每一个进行对比，相等就计数加1
       count++;
       if(count > maxCount) {
         res[char] = count;
@@ -69,6 +70,7 @@ function findLongest2(str) {
         res[char] = count
       }
     } else {
+      // 如果不相等 就重新计数为1 && 把这个不相等的设置为当前项
       count = 1;
       cur = char;
     }

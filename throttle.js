@@ -1,6 +1,6 @@
 // 节流，所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数。节流会稀释函数的执行频率
 // 实现方式：时间戳版 - 定时器版
-// 时间戳版
+// 时间戳版 🌿🌿🌿
 function throttle(func, wait) {
   let previous = 0;
   return function () {

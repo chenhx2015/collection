@@ -1,4 +1,4 @@
-// 要求设计 LazyMan 类，实现以下功能。
+// 要求设计 LazyMan 类，实现以下功能。🌿🌿🌿
 class LazyManClass {
   constructor(name) {
     this.name = name;
